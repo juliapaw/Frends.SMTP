@@ -2,6 +2,8 @@
 
 [![Actions Status](https://github.com/FrendsPlatform/Frends.Smtp/workflows/PackAndPushAfterMerge/badge.svg)](https://github.com/FrendsPlatform/Frends.Smtp/actions) ![MyGet](https://img.shields.io/myget/frends-community/v/Frends.Community.Email) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
 
+![Existing](https://app-github-custom-badges.azurewebsites.net/Badge?key=string)
+
 Frends task for sending emails with SMTP. Task sends emails via SMTP protocol and can handle attachments either from file or as raw string input.
 
 - [Installing](#installing)
