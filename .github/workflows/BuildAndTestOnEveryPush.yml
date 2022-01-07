@@ -36,6 +36,7 @@ jobs:
         $coverageInt = [int]($coverage * 100)
         $json = @{key=$badgeKey;displayName='Coverage';value=[string]$coverageInt+"%"} | convertto-json
         $headers = @{'x-api-key'=$apiKey}
+        $badgeKey
         Invoke-WebRequest -Uri https://app-github-custom-badges.azurewebsites.net/Badge -Method POST -Body $json -Headers $headers -ContentType "application/json"
 
     #- name: Push NuGet package to the testfeed

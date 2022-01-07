@@ -8,15 +8,14 @@ namespace Frends.Community.Email.Tests
     /// NOTE: To run these unit tests, you need an SMTP test server. Fill in the properties below with your values.
     /// </summary>
     [TestFixture]
-    [Ignore("Tests requires external SMTP server to work")]
     public class SendEmailTests
     {
         // ****************************************** FILL THESE ******************************************************
-        private const string USERNAME = "";
+        private const string USERNAME = "apikey";
         private const string PASSWORD = "";
-        private const string SMTPADDRESS = "";
-        private const string TOEMAILADDRESS = "";
-        private const string FROMEMAILADDRESS = "";
+        private const string SMTPADDRESS = "smtp.sendgrid.net";
+        private const string TOEMAILADDRESS = "jefim.borissov@hiq.fi";
+        private const string FROMEMAILADDRESS = "jefim.borissov@hiq.fi";
         private const int PORT = 587;
         private const bool USESSL = true;
         private const bool USEWINDOWSAUTHENTICATION = false;
