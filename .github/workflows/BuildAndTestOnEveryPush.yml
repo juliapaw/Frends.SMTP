@@ -29,7 +29,7 @@ jobs:
       id: vars
       shell: pwsh
       run: |
-        $badgeKey = "${{ env.GITHUB_REPOSITORY }}|${{ env.GITHUB_REF_NAME }}"
+        $badgeKey = "${{ github.repository }}|${{ github.ref_name }}"
         $apiKey = "${{ secrets.BADGE_SERVICE_API_KEY }}"
         Get-ChildItem -Path "." -Include "coverage.cobertura.xml" -Recurse | Copy-Item -Destination .
         [double] $coverage = try { ([xml]($tmp = Get-Content -Path 'coverage.cobertura.xml')).SelectSingleNode("coverage").Attributes["line-rate"].Value } catch { 0 }
