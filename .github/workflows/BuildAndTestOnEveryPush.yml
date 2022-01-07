@@ -9,6 +9,8 @@ jobs:
   build:
     name: Build on windows-latest
     runs-on: windows-latest
+    env:
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
     
     steps:
     - uses: actions/checkout@v1

@@ -1,8 +1,10 @@
-# Frends.Community.Email
+# Frends.Smtp
 
-[![Actions Status](https://github.com/FrendsPlatform/Frends.Smtp/workflows/PackAndPushAfterMerge/badge.svg)](https://github.com/FrendsPlatform/Frends.Smtp/actions) ![MyGet](https://img.shields.io/myget/frends-community/v/Frends.Community.Email) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
-
-![Existing](https://app-github-custom-badges.azurewebsites.net/Badge?key=string123)
+[![Main Build](https://github.com/FrendsPlatform/Frends.Smtp/workflows/PackAndPushAfterMerge/badge.svg)](https://github.com/FrendsPlatform/Frends.Smtp/actions)
+[![Development Build](https://github.com/FrendsPlatform/Frends.Smtp/actions/workflows/BuildAndTestOnEveryPush.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Smtp/actions/workflows/BuildAndTestOnEveryPush.yml)
+![MyGet](https://img.shields.io/myget/frends-community/v/Frends.Community.Email)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
+![Coverage](https://app-github-custom-badges.azurewebsites.net/Badge?key=FrendsPlatform/Frends.Smtp|main)
 
 Frends task for sending emails with SMTP. Task sends emails via SMTP protocol and can handle attachments either from file or as raw string input.
 
@@ -77,6 +79,20 @@ Settings for connecting to SMTP server
 # License
 
 This project is licensed under the MIT License - see the LICENSE file for details
+
+# Testing
+
+## Unit Tests
+
+Unit tests are run on each push and can be run manually by `dotnet test` command.
+
+## Integration Tests
+
+Integration tests in Frends.Smtp are run as part of unit test runs.
+
+## Performance Tests
+
+No performance tests are done in Frends.Smtp as the SMTP server itself is the main component during execution.
 
 # Building
 
