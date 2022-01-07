@@ -1,5 +1,6 @@
 using Frends.Smtp.SendEmail;
 using NUnit.Framework;
+using System;
 using System.IO;
 
 namespace Frends.Community.Email.Tests
@@ -56,10 +57,12 @@ namespace Frends.Community.Email.Tests
                 MessageEncoding = "utf-8"
             };
 
+            var passwordFromEnvironment = Environment.GetEnvironmentVariable("SMTP_PASSWORD");
+
             _options = new Options()
             {
                 UserName = USERNAME,
-                Password = PASSWORD,
+                Password = string.IsNullOrWhiteSpace(passwordFromEnvironment) ? PASSWORD : passwordFromEnvironment,
                 SMTPServer = SMTPADDRESS,
                 Port = PORT,
                 UseSsl = USESSL,
