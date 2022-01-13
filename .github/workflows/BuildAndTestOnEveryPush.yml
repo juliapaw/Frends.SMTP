@@ -13,3 +13,4 @@ jobs:
     secrets:
       env_var_value_1: ${{ secrets.SMTP_PASSWORD }}
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+
