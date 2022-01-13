@@ -7,39 +7,9 @@ on:
 
 jobs:
   build:
-    name: Build on windows-latest
-    runs-on: windows-latest
-    env:
-      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-    
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.0.x'
-
-    - name: Build
-      run: dotnet build
-    
-    - name: Test
-      run: dotnet test --collect:"XPlat Code Coverage"
-      
-    - name: Pack release version of task
-      run: dotnet pack --configuration Release --include-source
-      
-    - name: Save coverage resultse
-      id: vars
-      shell: pwsh
-      run: |
-        $badgeKey = "${{ github.repository }}|${{ github.ref_name }}"
-        $apiKey = "${{ secrets.BADGE_SERVICE_API_KEY }}"
-        Get-ChildItem -Path "." -Include "coverage.cobertura.xml" -Recurse | Copy-Item -Destination .
-        [double] $coverage = try { ([xml]($tmp = Get-Content -Path 'coverage.cobertura.xml')).SelectSingleNode("coverage").Attributes["line-rate"].Value } catch { 0 }
-        $coverageInt = [int]($coverage * 100)
-        $json = @{key=$badgeKey;displayName='Coverage';value=[string]$coverageInt+"%"} | convertto-json
-        $headers = @{'x-api-key'=$apiKey}
-        $badgeKey
-        Invoke-WebRequest -Uri https://app-github-custom-badges.azurewebsites.net/Badge -Method POST -Body $json -Headers $headers -ContentType "application/json"
-
-    #- name: Push NuGet package to the testfeed
-    #  run: dotnet nuget push Frends.Community.Email\bin\Release\Frends.Community.Email.*.nupkg  --api-key ${{ secrets.COMMUNITY_FEED_API_KEY }} --source https://www.myget.org/F/frends-community-test/api/v2/package --symbol-source https://www.myget.org/F/frends-community-test/symbols/api/v2/package
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/build_test.yml@main
+    with:
+      env_var_name_1: SMTP_PASSWORD
+    secrets:
+      env_var_value_1: ${{ secrets.SMTP_PASSWORD }}
+      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
