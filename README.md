@@ -1,12 +1,11 @@
 # Frends.Smtp
 
-[![Main Build](https://github.com/FrendsPlatform/Frends.Smtp/workflows/PackAndPushAfterMerge/badge.svg)](https://github.com/FrendsPlatform/Frends.Smtp/actions)
-[![Development Build](https://github.com/FrendsPlatform/Frends.Smtp/actions/workflows/BuildAndTestOnEveryPush.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Smtp/actions/workflows/BuildAndTestOnEveryPush.yml)
-![MyGet](https://img.shields.io/myget/frends-community/v/Frends.Community.Email)
+[![Build](https://github.com/FrendsPlatform/Frends.Smtp/actions/workflows/build_and_test_on_main.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Smtp/actions)
+![MyGet](https://img.shields.io/myget/frends-tasks/v/Frends.Smtp.SendEmail)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
 ![Coverage](https://app-github-custom-badges.azurewebsites.net/Badge?key=FrendsPlatform/Frends.Smtp|main)
 
-Frends task for sending emails with SMTP. Task sends emails via SMTP protocol and can handle attachments either from file or as raw string input.
+Frends task(s) for sending emails with SMTP. Task sends emails via SMTP protocol and can handle attachments either from file or as raw string input.
 
 - [Installing](#installing)
 - [Tasks](#tasks)
@@ -18,7 +17,7 @@ Frends task for sending emails with SMTP. Task sends emails via SMTP protocol an
 
 # Installing
 You can install the task via FRENDS UI Task View or you can find the nuget package from the following nuget feed
-'Nuget feed coming at later date'
+https://www.myget.org/F/frends-tasks/api/v2
 
 Tasks
 =====
@@ -125,6 +124,6 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
 # Change Log
 
-| Version             | Changes                 |
+| Version              | Changes              |
 | ---------------------| ---------------------|
 | 1.0.0 | Initial version of Frends.Smtp.SendEmail |
