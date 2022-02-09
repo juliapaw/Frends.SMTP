@@ -7,12 +7,13 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading;
 
-namespace Frends.Smtp.SendEmail
+namespace Frends.SMTP.SendEmail
 {
-    public static class SendEmailTask
+    public static class SMTP
     {
         /// <summary>
-        /// Sends email message with optional attachments. See https://github.com/FrendsPlatform/Frends.Smtp
+        /// Sends email message with optional attachments.
+        /// [Documentation](https://github.com/FrendsPlatform/Frends.SMTP/tree/main/Frends.SMTP.SendEmail)
         /// </summary>
         /// <returns>
         /// Object { bool EmailSent, string StatusString }

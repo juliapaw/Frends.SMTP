@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Frends.Smtp.SendEmail\Frends.Smtp.SendEmail.csproj" />
+    <ProjectReference Include="..\Frends.SMTP.SendEmail\Frends.SMTP.SendEmail.csproj" />
   </ItemGroup>
 
 </Project>

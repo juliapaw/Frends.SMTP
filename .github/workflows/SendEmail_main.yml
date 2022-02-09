@@ -1,9 +1,12 @@
-name: build_and_test_on_main.yml
+name: Frends.SMTP.SendEmail Main
 
 on:
   push:
-    branches:    
+    branches:
       - main
+    paths:
+      - 'Frends.SMTP.SendEmail/**'
+      - 'Frends.SMTP.SendEmail.Tests/**'
   workflow_dispatch:
   
 
@@ -12,6 +15,7 @@ jobs:
     uses: FrendsPlatform/FrendsTasks/.github/workflows/build_main.yml@main
     with:
       env_var_name_1: SMTP_PASSWORD
+      workdir: Frends.SMTP.SendEmail
     secrets:
       env_var_value_1: ${{ secrets.SMTP_PASSWORD }}
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Frends.Smtp.SendEmail
+namespace Frends.SMTP.SendEmail
 {
     public class Input
     {
