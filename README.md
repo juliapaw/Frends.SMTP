@@ -1,6 +1,6 @@
-# Frends.Smtp
+# Frends.SMTP
 
-Frends tasks for regular expressions.
+Frends tasks for SMTP protocol.
 
 # Tasks
 

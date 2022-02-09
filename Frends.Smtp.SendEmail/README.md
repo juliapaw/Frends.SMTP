@@ -96,9 +96,3 @@ Integration tests in Frends.SMTP are run as part of unit test runs.
 ## Performance Tests
 
 No performance tests are done in Frends.SMTP as the SMTP server itself is the main component during execution.
-
-# Changelog
-
-## [1.0.0] - 2022-02-09
-### Added
-- Initial implementation
