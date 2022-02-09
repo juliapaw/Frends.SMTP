@@ -9,10 +9,11 @@ using System.Threading;
 
 namespace Frends.Smtp.SendEmail
 {
-    public static class SendEmailTask
+    public static class Smtp
     {
         /// <summary>
-        /// Sends email message with optional attachments. See https://github.com/FrendsPlatform/Frends.Smtp
+        /// Sends email message with optional attachments.
+        /// [Documentation](https://github.com/FrendsPlatform/Frends.Smtp/tree/main/Frends.Smtp.SendEmail)
         /// </summary>
         /// <returns>
         /// Object { bool EmailSent, string StatusString }

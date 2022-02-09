@@ -1,9 +1,8 @@
-using Frends.Smtp.SendEmail;
 using NUnit.Framework;
 using System;
 using System.IO;
 
-namespace Frends.Community.Email.Tests
+namespace Frends.Smtp.SendEmail.Tests
 {
     /// <summary>
     /// NOTE: To run these unit tests, you need an SMTP test server. Fill in the properties below with your values.
@@ -83,7 +82,7 @@ namespace Frends.Community.Email.Tests
             var input = _input;
             input.Subject = "Email test - PlainText";
 
-            var result = SendEmailTask.SendEmail(input, null, _options, new System.Threading.CancellationToken());
+            var result = Smtp.SendEmail(input, null, _options, new System.Threading.CancellationToken());
             Assert.IsTrue(result.EmailSent);
         }
 
@@ -103,7 +102,7 @@ namespace Frends.Community.Email.Tests
 
             var Attachments = new Attachment[] { attachment };
 
-            var result = SendEmailTask.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
+            var result = Smtp.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
             Assert.IsTrue(result.EmailSent);
         }
 
@@ -120,7 +119,7 @@ namespace Frends.Community.Email.Tests
             };
             var Attachments = new Attachment[] { attachment };
 
-            var result = SendEmailTask.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
+            var result = Smtp.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
             Assert.IsTrue(result.EmailSent);
         }
 
@@ -140,7 +139,7 @@ namespace Frends.Community.Email.Tests
 
             var Attachments = new Attachment[] { attachment };
 
-            var result = SendEmailTask.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
+            var result = Smtp.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
             Assert.IsFalse(result.EmailSent);
         }
 
@@ -160,7 +159,7 @@ namespace Frends.Community.Email.Tests
 
             var Attachments = new Attachment[] { attachment };
 
-            Assert.Throws<FileNotFoundException>(() => SendEmailTask.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken()));
+            Assert.Throws<FileNotFoundException>(() => Smtp.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken()));
 
         }
     }
