@@ -1,4 +1,4 @@
-# Frends.Smtp.SendEmail
+# Frends.SMTP.SendEmail
 
 
 [![Frends.Smtp.SendEmail Main](https://github.com/FrendsPlatform/Frends.Smtp/actions/workflows/SendEmail_main.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Regex/actions/workflows/IsMatch_build_and_test_on_main.yml)
@@ -50,7 +50,7 @@ Settings for connecting to SMTP server
 
 | Property             | Type                 | Description                          | Example |
 | ---------------------| ---------------------| ------------------------------------ | ----- |
-| Smtp server | string | SMTP server address | smtp.somedomain.com |
+| SMTP server | string | SMTP server address | smtp.somedomain.com |
 | Port | int | SMTP server port | 25 |
 | Use ssl| bool | Set this true if SMTP expects to be connected using SSL | false |
 | Use windows authentication | bool | Set this true if you want to use windows authentication to authenticate to SMTP server | false |
@@ -69,7 +69,7 @@ Settings for connecting to SMTP server
 
 Clone a copy of the repository
 
-`git clone https://github.com/FrendsPlatform/Frends.Smtp.git`
+`git clone https://github.com/FrendsPlatform/Frends.SMTP.git`
 
 Rebuild the project
 
@@ -91,11 +91,11 @@ Unit tests are run on each push and can be run manually by `dotnet test` command
 
 ## Integration Tests
 
-Integration tests in Frends.Smtp are run as part of unit test runs.
+Integration tests in Frends.SMTP are run as part of unit test runs.
 
 ## Performance Tests
 
-No performance tests are done in Frends.Smtp as the SMTP server itself is the main component during execution.
+No performance tests are done in Frends.SMTP as the SMTP server itself is the main component during execution.
 
 # Changelog
 

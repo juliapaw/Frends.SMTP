@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System;
 using System.IO;
 
-namespace Frends.Smtp.SendEmail.Tests
+namespace Frends.SMTP.SendEmail.Tests
 {
     /// <summary>
     /// NOTE: To run these unit tests, you need an SMTP test server. Fill in the properties below with your values.
@@ -82,7 +82,7 @@ namespace Frends.Smtp.SendEmail.Tests
             var input = _input;
             input.Subject = "Email test - PlainText";
 
-            var result = Smtp.SendEmail(input, null, _options, new System.Threading.CancellationToken());
+            var result = SMTP.SendEmail(input, null, _options, new System.Threading.CancellationToken());
             Assert.IsTrue(result.EmailSent);
         }
 
@@ -102,7 +102,7 @@ namespace Frends.Smtp.SendEmail.Tests
 
             var Attachments = new Attachment[] { attachment };
 
-            var result = Smtp.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
+            var result = SMTP.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
             Assert.IsTrue(result.EmailSent);
         }
 
@@ -119,7 +119,7 @@ namespace Frends.Smtp.SendEmail.Tests
             };
             var Attachments = new Attachment[] { attachment };
 
-            var result = Smtp.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
+            var result = SMTP.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
             Assert.IsTrue(result.EmailSent);
         }
 
@@ -139,7 +139,7 @@ namespace Frends.Smtp.SendEmail.Tests
 
             var Attachments = new Attachment[] { attachment };
 
-            var result = Smtp.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
+            var result = SMTP.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken());
             Assert.IsFalse(result.EmailSent);
         }
 
@@ -159,7 +159,7 @@ namespace Frends.Smtp.SendEmail.Tests
 
             var Attachments = new Attachment[] { attachment };
 
-            Assert.Throws<FileNotFoundException>(() => Smtp.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken()));
+            Assert.Throws<FileNotFoundException>(() => SMTP.SendEmail(input, Attachments, _options, new System.Threading.CancellationToken()));
 
         }
     }
