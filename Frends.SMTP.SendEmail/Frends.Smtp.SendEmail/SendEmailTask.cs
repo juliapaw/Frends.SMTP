@@ -6,12 +6,12 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading;
-
 namespace Frends.SMTP.SendEmail
 {
-#pragma warning disable IDE1006 // Naming Styles
-
+#pragma warning disable S101 // Types should be named in PascalCase
 	public static class SMTP
+#pragma warning restore S101 // Types should be named in PascalCase
+
 	{
 		/// <summary>
 		/// Sends email message with optional attachments.
@@ -95,7 +95,7 @@ namespace Frends.SMTP.SendEmail
 		/// <summary>
 		/// Initializes new MailMessage with given parameters. Uses default value 'true' for IsBodyHtml
 		/// </summary>
-		public static MailMessage InitializeMailMessage(Input input)
+		private static MailMessage InitializeMailMessage(Input input)
 		{
 			//split recipients, either by comma or semicolon
 			var separators = new[] { ',', ';' };
@@ -133,8 +133,6 @@ namespace Frends.SMTP.SendEmail
 			{
 				mail.Bcc.Add(bccRecipient);
 			}
-
-
 			//Set message encoding
 			Encoding encoding = Encoding.GetEncoding(input.MessageEncoding);
 
@@ -157,5 +155,4 @@ namespace Frends.SMTP.SendEmail
 			return filePaths;
 		}
 	}
-#pragma warning restore IDE1006 // Naming Styles
 }
