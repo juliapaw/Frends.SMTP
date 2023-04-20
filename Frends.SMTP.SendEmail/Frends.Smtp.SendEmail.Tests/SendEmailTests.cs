@@ -44,7 +44,6 @@ namespace Frends.SMTP.SendEmail.Tests
 
 			if (!File.Exists(_filepath))
 			{
-				using FileStream fs = File.Create(_filepath);
 				File.Create(_filepath).Dispose();
 			}
 
