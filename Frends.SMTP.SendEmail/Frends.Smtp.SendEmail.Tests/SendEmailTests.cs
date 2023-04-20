@@ -42,10 +42,11 @@ namespace Frends.SMTP.SendEmail.Tests
 
             _filepath = Path.Combine(_localAttachmentFolder, TEST_FILE_NAME);
 
-            if (!File.Exists(_filepath))
-#pragma warning disable S108 // Nested blocks of code should not be left empty
-				using (File.Create(_filepath)) { }
-#pragma warning restore S108 // Nested blocks of code should not be left empty
+			if (!File.Exists(_filepath))
+			{
+				using FileStream fs = File.Create(_filepath);
+				File.Create(_filepath).Dispose();
+			}
 
 			_input = new Input()
             {
